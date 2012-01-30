@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%= t 'menu_item.name'  %>:</b>
+  <%= @menu_item.name %>
+</p>
+
+<p>
+  <b><%= t 'menu_item.description' %>:</b>
+  <%= @menu_item.description %>
+</p>
+
+<p>
+  <b><%= t 'menu_item.type' %>:</b>
+  <%= type_name(@menu_item.item_type) %>
+</p>
+
+<p>
+  <b><%= t 'menu_item.price' %>:</b>
+  <%= @menu_item.price %>
+</p>
+
+
+<%= link_to t(:edit), edit_menu_item_path(@menu_item) %> |
+<%= link_to t(:back), menu_items_path %>
