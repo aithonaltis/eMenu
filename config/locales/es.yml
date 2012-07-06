@@ -1,12 +1,13 @@
 es:
-    show: "ver"
-    edit: "editar"
-    destroy: "borrar"
-    back: "regresar"
+    show: "Ver"
+    edit: "Editar"
+    destroy: "Eliminar"
+    back: "Regresar"
     select_blank: "Seleccionar..."
     menu_item:
         name: "Nombre"
         description: "Descripcion"
         type: "Tipo"
         price: "Precio"
+        save: "Guardar"
     

@@ -6,8 +6,10 @@ gem 'rails', '3.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # Mongoid
-gem "mongoid", "~> 2.4"
-gem "bson_ext", "~> 1.5"
+gem 'mongoid', '~> 2.4'
+gem 'bson_ext', '~> 1.5'
+gem 'haml', '~> 3.1.6'
+gem 'bootstrap-sass', '~> 2.0.4'
 
 # Gems used only for assets and not required
 # in production environments by default.

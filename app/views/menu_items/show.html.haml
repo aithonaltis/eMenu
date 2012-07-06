@@ -1,0 +1,20 @@
+%p>
+  %b= "#{t('menu_item.name')} :"
+  = @menu_item.name
+
+%p
+  %b= "#{t('menu_item.description')} :"
+  = @menu_item.description
+
+%p
+  %b= "#{t('menu_item.type')}:"
+  = type_name(@menu_item.item_type)
+
+%p
+  %b= "#{t('menu_item.price')} :"
+  = @menu_item.price
+
+
+= link_to t(:edit), edit_menu_item_path(@menu_item) 
+|
+= link_to t(:back), menu_items_path

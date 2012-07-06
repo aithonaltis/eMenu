@@ -1,0 +1,25 @@
+%h1 Listing menu_items
+
+%table{:class => "table table-striped"}
+  %tr
+    %th= t('menu_item.name')
+    %th= t('menu_item.description')
+    %th= t('menu_item.type')
+    %th= t('menu_item.price')
+    %th
+    %th
+    %th
+
+  - @menu_items.each do |menu_item|
+    %tr
+      %td= menu_item.name
+      %td= menu_item.description
+      %td= type_name(menu_item.item_type)
+      %td= menu_item.price
+      %td= link_to t(:show), menu_item
+      %td= link_to t(:edit), edit_menu_item_path(menu_item)
+      %td= link_to t(:destroy), menu_item, confirm: 'Are you sure?', method: :delete
+
+%br/
+
+= link_to t('New Menu item'), new_menu_item_path, class: "btn btn-large btn-success"

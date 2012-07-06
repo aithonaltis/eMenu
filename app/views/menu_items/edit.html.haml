@@ -1,0 +1,10 @@
+%h1 Editing menu_item
+
+.row
+	%div{class: "span6 offset3" }
+		= render 'form'
+
+.form-actions
+	= link_to t(:show), @menu_item
+	|
+	= link_to t(:back), menu_items_path

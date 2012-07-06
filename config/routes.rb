@@ -1,4 +1,7 @@
 EMenu::Application.routes.draw do
+
+  root :to => 'menu_items#index' 
+
   resources :menu_items
 
   # The priority is based upon order of creation:
