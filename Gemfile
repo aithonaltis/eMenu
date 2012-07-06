@@ -6,10 +6,11 @@ gem 'rails', '3.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # Mongoid
-gem 'mongoid', '~> 2.4'
-gem 'bson_ext', '~> 1.5'
-gem 'haml', '~> 3.1.6'
-gem 'bootstrap-sass', '~> 2.0.4'
+gem "mongoid", ">= 2.4.11"
+gem "bson_ext", ">= 1.6.4"
+gem 'haml', '>= 3.1.6'
+gem 'bootstrap-sass', '>= 2.0.4'
+gem 'bcrypt-ruby', '3.0.1'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -25,17 +26,18 @@ end
 
 gem 'jquery-rails'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+group :test, :development do
+  gem 'rspec-rails', '2.10.1'
+  #gem 'guard-rspec', '0.5.5'
+  #gem 'guard-spork', '0.3.2'
+  #gem 'spork', '0.9.0'
+end
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+group :test do
+  gem 'capybara', '>= 1.1.2'
+  gem 'cucumber-rails', ">= 1.3.0"
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner', ">= 0.8.0"
+  gem "factory_girl_rails", ">= 3.3.0"
+  gem "mongoid-rspec", ">= 1.4.4"
+end
