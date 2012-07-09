@@ -1,0 +1,11 @@
+%header.navbar.navbar-fixed-top
+	%nav.navbar-inner
+		.container
+			= link_to "eMenu", root_path, class: 'brand', id: 'logo'
+			%nav
+				%ul.nav.pull-right
+					%li= link_to t('home'), root_path
+					%li= link_to t('help'), help_path
+					%li= link_to('Logout', '#')
+					%li= link_to('Login', '#')
+					%li= link_to('Sign_up', '#')

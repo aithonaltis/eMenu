@@ -4,6 +4,11 @@ es:
     destroy: "Eliminar"
     back: "Regresar"
     select_blank: "Seleccionar..."
+    sign_up_now: "¡Registrate Ahora!"
+    home: 'Inicio'
+    help: "Ayuda"
+    about_us: "Acerca De"
+    contact: "Contacto"
     menu_item:
         name: "Nombre"
         description: "Descripcion"
