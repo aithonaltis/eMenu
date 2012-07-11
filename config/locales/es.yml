@@ -61,6 +61,6 @@ es:
                         password:
                             blank: "Contraseña inválida"
                         encrypted_password:
-                            blank: "Repite tu contraseña"
+                            blank: "Confirma tu contraseña"
                         current_password:
                             blank: "Introduce tu contraseña actual"

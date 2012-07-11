@@ -8,8 +8,8 @@ es:
       already_confirmed: "ya está confirmada, por favor intente ingresar"
       not_locked: "no está bloqueada"
       not_saved:
-        one: "1 error evitó que este %{resource} fuera guardado:"
-        other: "%{count} errores evitaron que este %{resource} fuera guardado:"
+        one: "1 error evitaron su registro:"
+        other: "%{count} errores evitaron su registro"
 
   devise:
     failure:
@@ -42,17 +42,17 @@ es:
         inactive: 'inactiva'
         unconfirmed: 'sin confirmar'
         locked: 'bloqueada'
-#     unlocks:
-#       send_instructions: 'Recibirá un correo electrónico con instrucciones sobre cómo desbloquear su cuenta en unos minutos.'
-#       unlocked: 'Su cuenta fue desbloqueada con éxito, usted ha sido ingresado al sistema.'
-#       send_paranoid_instructions: 'Si su cuenta existe, usted recibirá un correo electrónico con instrucciones sobre cómo desbloquear su cuenta en unos minutos.'
-#     omniauth_callbacks:
-#       success: 'Exitosamente autorizado desde la cuenta %{kind}.'
-#       failure: 'No se le pudo autorizar en %{kind} debido a "%{reason}".'
-#     mailer:
-#       confirmation_instructions:
-#         subject: 'Instrucciones de Confirmación'
-#       reset_password_instructions:
-#         subject: 'Instrucciones de reinicio de contraseña'
-#       unlock_instructions:
-#         subject: 'Instrucciones de desbloqueo'
+    unlocks:
+      send_instructions: 'Recibirá un correo electrónico con instrucciones sobre cómo desbloquear su cuenta en unos minutos.'
+      unlocked: 'Su cuenta fue desbloqueada con éxito, usted ha sido ingresado al sistema.'
+      send_paranoid_instructions: 'Si su cuenta existe, usted recibirá un correo electrónico con instrucciones sobre cómo desbloquear su cuenta en unos minutos.'
+    omniauth_callbacks:
+      success: 'Exitosamente autorizado desde la cuenta %{kind}.'
+      failure: 'No se le pudo autorizar en %{kind} debido a "%{reason}".'
+    mailer:
+      confirmation_instructions:
+        subject: 'Instrucciones de Confirmación'
+      reset_password_instructions:
+        subject: 'Instrucciones de reinicio de contraseña'
+      unlock_instructions:
+        subject: 'Instrucciones de desbloqueo'
