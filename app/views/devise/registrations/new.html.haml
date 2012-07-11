@@ -1,0 +1,24 @@
+= provide(:title, t('sign_up'))
+%h1= t('sign_up')
+
+.row
+	.span6.offset3
+		= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+			= devise_error_messages!
+
+			= f.label t 'users.name'
+			= f.text_field :name, class: "span6", id: "name"
+
+			= f.label t('users.email')
+			= f.email_field :email, class: "span6", id: "email"
+
+			= f.label t('users.password')
+			= f.password_field :password, class: "span6", id: "password"
+
+			= f.label t('users.password_confirmation')
+			= f.password_field :password_confirmation, class: "span6", id: "password_confirmation"
+
+			.form-actions
+				= f.submit t('users.save'), class: 'btn btn-large btn-success'
+
+		= render "devise/shared/links"

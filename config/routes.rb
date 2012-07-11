@@ -1,15 +1,15 @@
 EMenu::Application.routes.draw do
 
+  devise_for :users
+
   resources :menu_items
+  resources :users, only: [:show]
 
   root to: 'static_pages#home' 
 
   match '/about', to: "static_pages#about"
   match '/contact', to: "static_pages#contact"
   match '/help', to: "static_pages#help"
-
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
@@ -18,9 +18,6 @@ EMenu::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
 
   # Sample resource route with options:
   #   resources :products do
@@ -54,12 +51,6 @@ EMenu::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
-
-  # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.

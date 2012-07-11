@@ -1,0 +1,16 @@
+=provide(:title, t 'users.unlock_instructions')
+%h2= t 'users.unlock_instructions'
+
+.row
+	.span6.offset3
+		= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f|
+			= devise_error_messages!
+
+			%div
+				= f.label :email, t 'users.email'
+				= f.email_field :email
+
+			.form-actions
+				= f.submit t "users.unlock_instructions", class: "btn btn-large btn-success"
+
+		= render "devise/shared/links"

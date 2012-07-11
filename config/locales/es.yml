@@ -4,15 +4,63 @@ es:
     destroy: "Eliminar"
     back: "Regresar"
     select_blank: "Seleccionar..."
-    sign_up_now: "¡Registrate Ahora!"
     home: 'Inicio'
     help: "Ayuda"
     about_us: "Acerca De"
     contact: "Contacto"
+    account: "Mi Cuenta"
+    menus: "Menús"
+    edit_account: "Editar"
+    sign_in: "Iniciar sesión"
+    sign_out: "Salir"
+    sign_up: "Regístrate"
+    sign_up_now: "¡Registrate Ahora!"
+    forgot_password?: "¿Has olvidado tu contraseña?"
+    remember_me: "No cerrar sesión"
+    hello: "Hola"
+
     menu_item:
         name: "Nombre"
         description: "Descripcion"
         type: "Tipo"
         price: "Precio"
         save: "Guardar"
-    
+    users:
+        new: "Nuevo Usuario"
+        edit: "Editar Mi Cuenta"
+        save: "Registro"
+        name: "Nombre"
+        email: "Email"
+        password: "Contraseña"
+        password_confirmation: "Confirma Tu Contraseña"
+        current_password: "Contraseña Actual"
+        new_password: "Nueva Contraseña"
+        save: "Guardar"
+        cancel_account: "Cancelar Mi Cuenta"
+        advertisement_password_edit: "En blanco si no deseas cambiarlo"
+        advertisement_password_actual: "Requerida para validar los cambios"
+        send_password_reset_instruc: "Recuperar Contraseña"
+        change_password: "Cambiar Contraseña"
+        unlock_account: "Desbloquear Mi Cuenta"
+        unlock_instructions: "Desbloquear Cuenta"
+        blocked_account_advertisement: "Tu cuenta ha sido bloqueada debido a varios intentos fallidos por ingresar"
+        click_link_unlock_acc: "Sigue el enlace para desbloquear tu cuenta"
+        confirmation_account: "Confirmar Mi Cuenta"
+        confimartion_instructions: "Enviar Instrucciones de Confirmación"
+
+    mongoid:
+        errors:
+            models:
+                user:
+                    attributes:
+                        name:
+                            blank: "Introduce tu nombre"
+                        email:
+                            blank: "Introduce un email"
+                            invalid: "Formato de email incorrecto"
+                        password:
+                            blank: "Contraseña inválida"
+                        encrypted_password:
+                            blank: "Repite tu contraseña"
+                        current_password:
+                            blank: "Introduce tu contraseña actual"

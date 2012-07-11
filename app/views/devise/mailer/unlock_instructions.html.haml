@@ -1,0 +1,9 @@
+%p
+	= t 'hello'
+	= @resource.email!
+
+%p= t 'users.blocked_account_advertisement'
+
+%p= t 'users.click_link_unlock_acc'
+
+%p= link_to t('users.unlock_account') , unlock_url(@resource, :unlock_token => @resource.unlock_token)

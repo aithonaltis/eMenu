@@ -10,7 +10,7 @@ gem "mongoid", ">= 2.4.11"
 gem "bson_ext", ">= 1.6.4"
 gem 'haml', '>= 3.1.6'
 gem 'bootstrap-sass', '>= 2.0.4'
-gem 'bcrypt-ruby', '3.0.1'
+gem "devise"
 
 # Gems used only for assets and not required
 # in production environments by default.
