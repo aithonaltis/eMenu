@@ -47,6 +47,7 @@ es:
         click_link_unlock_acc: "Sigue el enlace para desbloquear tu cuenta"
         confirmation_account: "Confirmar Mi Cuenta"
         confimartion_instructions: "Enviar Instrucciones de Confirmación"
+        confirm_delete: "¿Estas seguro de querer eliminar tu cuenta?"
 
     mongoid:
         errors:
@@ -59,8 +60,11 @@ es:
                             blank: "Introduce un email"
                             invalid: "Formato de email incorrecto"
                         password:
-                            blank: "Contraseña inválida"
+                            blank: "Ingresa una contraseña"
+                            too_short: "Tu contraseña debe ser de mínimo 6 carateres"
+                            confirmation: "Las contraseñas no coinciden"
                         encrypted_password:
                             blank: "Confirma tu contraseña"
                         current_password:
                             blank: "Introduce tu contraseña actual"
+                            invalid: "La contraseña actual no coincide"

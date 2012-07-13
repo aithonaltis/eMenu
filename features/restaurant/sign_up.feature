@@ -1,8 +1,8 @@
-Feature: restaurant signs up in pMenu
+Feature: restaurant signs up in eMenu
 
 	As a restaurant/restaurant chain
-	I want to create an account in pMenu
-	So that I can create my menu in pMenu
+	I want to create an account in eMenu
+	So that I can create my menu in eMenu
 
 	Background:
 		Given I am not logged in
@@ -10,18 +10,30 @@ Feature: restaurant signs up in pMenu
 		And I follow "sign_up"
 
 	Scenario: sign up with valid data
-		When I fill in the following:
-
-			| name | Restaurante Perruno |
-			| email | can@perrunos.com |
-			| password | algunPassword |
-			| password_confirmation | algunPassword |
-
-		#And I attach the file "~pMenu/logo.jpg" to "Logo" #Imagen en pMenu home del usuario
-		And I press "Guardar"
+		When I sign up with valid data
 		And I should be on the home page
 		And I should see "¡Bienvenido! Tu cuenta se ha creado correctamente"
 
-	Scenario: User signs up with existent email
-	    When I request an invitation with an existent email
-	    Then I should see an existent email message
+	Scenario: Restaurant signs up without name
+	    When I sign up without "name"
+	    Then I should see "Introduce tu nombre"
+
+	Scenario: Restaurant signs up with existent email
+	    When I sign up with "existent email"
+	    Then I should see "Email ya está en uso"
+
+	Scenario: Restaurant signs up without password
+	    When I sign up without "password"
+	    Then I should see "Ingresa una contraseña"
+
+	Scenario: Restaurant signs up with invalid password
+		When I sign up with "invalid password"
+		Then I should see "Tu contraseña debe ser de mínimo 6 carateres"
+
+	Scenario: Restaurant signs up without password confirmation
+	    When I sign up without "password confirmation"
+	    Then I should see "Confirma tu contraseña"
+
+	Scenario: Restaurant signs up with mismatched password and confirmation
+		When I sign up with "mismatched password confirmation"
+		Then I should see "Las contraseñas no coinciden"

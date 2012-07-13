@@ -2,6 +2,7 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+require 'email_spec'
 require 'rspec/autorun'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
@@ -9,6 +10,11 @@ require 'rspec/autorun'
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
+
+  #Config for email_spec
+  config.include(EmailSpec::Helpers)
+  config.include(EmailSpec::Matchers)
+
   # ## Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
@@ -39,6 +45,6 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
-    DatabaseCleaner.Clean
+    DatabaseCleaner.clean
   end
 end

@@ -7,32 +7,32 @@
       = devise_error_messages!
 
       = f.label t 'users.name'
-      = f.text_field :name, class: "span6"
+      = f.text_field :name, class: "span6", id: 'name'
 
       = f.label t('users.email')
-      = f.email_field :email, class: "span6" 
+      = f.email_field :email, class: "span6", id: 'email'
 
       = f.label t('users.password')
       %span.label= t('users.advertisement_password_edit') 
       %br/
       %br/
-      = f.password_field :password, :autocomplete => "off", class: "span6" 
+      = f.password_field :password, :autocomplete => "off", class: "span6" , id: 'password'
 
       = f.label t('users.password_confirmation')
       %span.label= t('users.advertisement_password_edit') 
       %br/
       %br/
-      = f.password_field :password_confirmation, class: "span6" 
+      = f.password_field :password_confirmation, class: "span6", id: 'password_confirmation'
 
       = f.label t('users.current_password')
       %span.label= t('users.advertisement_password_actual') 
       %br/
       %br/
-      = f.password_field :current_password, class: "span6" 
+      = f.password_field :current_password, class: "span6", id: 'current_password'
 
       .form-actions
-        = f.submit t('users.save'), class: 'btn btn-large btn-success'
+        = f.submit t('users.save'), class: 'btn btn-large btn-success', id: 'save'
 
     %p 
-      = link_to t('users.cancel_account'), registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, class: 'btn btn-small'
+      = link_to t('users.cancel_account'), registration_path(resource_name), :data => { :confirm => t('users.confirm_delete') }, :method => :delete, class: 'btn btn-small', id: 'delete_account'
       = link_to t('back'), :back, class: 'btn btn-small btn-inverse'
