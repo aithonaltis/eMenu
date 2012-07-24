@@ -41,10 +41,8 @@ Feature: restaurant signs up in eMenu
 
 	Scenario: Restaurant signs up with avatar
 		When I sign up with the image "spec/images/icn_default.png" as avatar
-		Then show me the page
 		Then I should see the right avatar image
 
 	Scenario: Restaurant signs up without avatar
 		When I sign up with valid data
-		Then show me the page
 		Then I should see the default avatar image
