@@ -1,6 +1,8 @@
 class User
   include Mongoid::Document
   
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :image
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -8,8 +10,10 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
 
   ## Database authenticatable
+  field :name, :type => String
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
+  field :image, :type => String
 
   validates_presence_of :name
   validates_presence_of :email
@@ -43,10 +47,8 @@ class User
   ## Token authenticatable
   # field :authentication_token, :type => String
 
-  field :name, :type => String
-
-  validates :name, presence: true
+  # Mount the uploader
+  mount_uploader :image, ImageUploader
   
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
 end

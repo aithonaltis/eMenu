@@ -1,1 +1,10 @@
-%p User: = @user.email
+= provide(:title, current_user.name)
+
+.row
+	%aside.span2
+		%section
+			= image_tag current_user.image_url(:profile).to_s, class: 'avatar'
+			%h1
+				= current_user.name.to_s
+	.span8
+		%h3= t('menus')

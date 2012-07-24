@@ -4,16 +4,19 @@
 			= link_to "eMenu", root_path, class: 'brand'
 			%nav
 				%ul.nav.pull-right
-					%li= link_to t('home'), root_path
-					%li= link_to t('help'), help_path
 					- if user_signed_in?
+						%li= link_to t('home'), user_path
 						%li#fat-menu.dropdown 
-							%a{href: '#', class: 'dropdown-toggle', data: { toggle: 'dropdown'}}= t('account') 
+							%a{href: '#', class: 'dropdown-toggle', data: { toggle: 'dropdown'}}
+								%i.icon-user.icon-white 
+								= current_user.name
+								%b.caret
 							%ul.dropdown-menu
 								%li= link_to t('menus'), menu_items_path
 								%li= link_to t('edit_account'), edit_user_registration_path, id: 'edit_account'
 								%li.divider
 								%li= link_to(t('sign_out'), destroy_user_session_path, :method => 'delete', id: 'sign_out')
 					- else
+						%li= link_to t('home'), root_path
 						%li= link_to(t('sign_up'), new_user_registration_path, id: 'sign_up')
 						%li= link_to(t('sign_in'), new_user_session_path, id: 'sign_in')

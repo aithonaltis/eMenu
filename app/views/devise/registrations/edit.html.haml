@@ -12,6 +12,11 @@
       = f.label t('users.email')
       = f.email_field :email, class: "span6", id: 'email'
 
+      = f.label t('users.avatar')
+      = f.file_field :image, class: "span6", id: "avatar"
+      %br/
+      %br/
+
       = f.label t('users.password')
       %span.label= t('users.advertisement_password_edit') 
       %br/
@@ -31,8 +36,8 @@
       = f.password_field :current_password, class: "span6", id: 'current_password'
 
       .form-actions
+        = link_to t('back'), :back, class: 'btn btn-large btn-inverse'
         = f.submit t('users.save'), class: 'btn btn-large btn-success', id: 'save'
 
     %p 
       = link_to t('users.cancel_account'), registration_path(resource_name), :data => { :confirm => t('users.confirm_delete') }, :method => :delete, class: 'btn btn-small', id: 'delete_account'
-      = link_to t('back'), :back, class: 'btn btn-small btn-inverse'

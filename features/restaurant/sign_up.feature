@@ -5,13 +5,14 @@ Feature: restaurant signs up in eMenu
 	So that I can create my menu in eMenu
 
 	Background:
-		Given I am not logged in
+		Given I do not have a user
+		And I am not logged in
 		When I am on the home page
 		And I follow "sign_up"
 
 	Scenario: sign up with valid data
 		When I sign up with valid data
-		And I should be on the home page
+		And I should be on the user page
 		And I should see "¡Bienvenido! Tu cuenta se ha creado correctamente"
 
 	Scenario: Restaurant signs up without name
@@ -37,3 +38,13 @@ Feature: restaurant signs up in eMenu
 	Scenario: Restaurant signs up with mismatched password and confirmation
 		When I sign up with "mismatched password confirmation"
 		Then I should see "Las contraseñas no coinciden"
+
+	Scenario: Restaurant signs up with avatar
+		When I sign up with the image "spec/images/icn_default.png" as avatar
+		Then show me the page
+		Then I should see the right avatar image
+
+	Scenario: Restaurant signs up without avatar
+		When I sign up with valid data
+		Then show me the page
+		Then I should see the default avatar image

@@ -42,13 +42,12 @@ When /^I sign up with valid data$/ do
       | password_confirmation | #{user.password_confirmation} |
       When I press "Guardar"
     }
-    #And I attach the file "~eMenu/logo.jpg" to "Logo" add this step when upload file is implement
 end
 
 When /^I sign up with "(.*?)"$/ do |field|
   @user = FactoryGirl.create(:user)
   if field == 'existent email'
-    @user.email == 'person@homtail.com'
+    @user.email == 'person@hotmail.com'
   elsif field == 'invalid password'
     @user.password, @user.password_confirmation = 'a*80'
   elsif field == 'mismatched password confirmation'
@@ -69,6 +68,19 @@ When /^I sign up without "(.*?)"$/ do |field|
     @user.password_confirmation == ''
   end
   step %{I fill and submitt sign up form with user data}
+end
+
+When /^I sign up with the image "(.+)" as avatar$/ do |image|
+  create_visitor
+  steps %Q{
+    When I fill in the following:
+      | name | #{@visitor[:name]} |
+      | email | #{@visitor[:email]} |
+      | password | #{@visitor[:password]} |
+      | password_confirmation | #{@visitor[:password_confirmation]} |
+  }
+  step %{I attach the file "#{image}" to "avatar"}
+  step %{I press "Guardar"}
 end
 
 When /^I fill and submitt sign up form with user data$/ do
@@ -197,4 +209,13 @@ end
 
 Then /^I should not see the link "(.*)"/ do |link|
   page.should_not have_link(link)
+end
+
+Then /^I should see the right avatar image$/ do
+  created = User.first conditions: {:email => @visitor[:email]}
+  page.should have_xpath("//img[contains(@src, \"/uploads/user/image/#{created.id}/profile_icn_default.png\")]")
+end
+
+Then /^I should see the default avatar image$/ do
+  page.should have_xpath("//img[contains(@src, \"/assets/listing_defaults/profile_default.png\")]")
 end

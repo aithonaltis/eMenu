@@ -17,7 +17,7 @@ Feature: restaurant logs in eMenu
 	Scenario: Restaurant signs in successfully
 		Given I have a user account
 		When I sign in with valid credentials
-		Then I should be on the home page
+		Then I should be on the user page
 		And I should see "¡Bienvenido a eMenu!"
 		And I am signed in
 

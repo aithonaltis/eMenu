@@ -11,6 +11,8 @@ gem 'bson_ext', '>= 1.6.4'
 gem 'haml', '>= 3.1.6'
 gem 'bootstrap-sass', '>= 2.0.4'
 gem 'devise'
+gem 'mini_magick'
+gem 'carrierwave-mongoid', '>= 0.2.0', :require => 'carrierwave/mongoid'
 
 # Gems used only for assets and not required
 # in production environments by default.

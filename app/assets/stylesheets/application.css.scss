@@ -1,0 +1,187 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+@import "bootstrap";
+
+@import "bootstrap-responsive";
+
+$grayMediumLight: #eaeaea;
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $grayLight;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1; 
+
+  &:hover {
+  	color: white;
+  	text-decoration: none;
+  }
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $grayMediumLight;
+  color: $grayLight;
+
+  a {
+  	color: $gray;
+
+  	&:hover { 
+	  color: $grayDarker;
+	 }
+  }
+
+  small {
+  	float: left;
+  }
+
+  ul {
+  	float: right;
+  	list-style: none;
+
+  	li {
+ 	    float: left;
+      margin-left: 10px;
+  	}
+  }
+}
+
+/* forms */
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+ }
+
+
+.logo, .logo a {
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+	overflow: hidden;
+}
+
+.logo {
+	z-index: 2;
+	position: absolute;
+	display: block;
+	top: 5px;
+	/*
+	left: -7px;
+	width: 188px;
+	height: 76px;
+	*/
+}
+
+/* sidebar */
+
+aside {
+
+  text-align: center;
+
+  section {
+    
+    padding: 10px 0;
+    border-top: 1px solid $grayMediumLight;
+    
+    &:first-child {
+      border: 0;
+    }
+
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    
+    h1 {
+      font-size: 1.6em;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 15px;
+      padding-top: 10px;
+      border-top: 1px solid #EAEAEA;
+    }
+  }
+}
+
+.avatar {
+}

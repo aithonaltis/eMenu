@@ -18,6 +18,9 @@
 			= f.label t('users.password_confirmation')
 			= f.password_field :password_confirmation, class: "span6", id: "password_confirmation"
 
+			= f.label t('users.avatar')
+			= f.file_field :image, class: "span6", id: "avatar"
+
 			.form-actions
 				= f.submit t('users.save'), class: 'btn btn-large btn-success'
 

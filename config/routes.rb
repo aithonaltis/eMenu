@@ -1,6 +1,10 @@
 EMenu::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users 
+
+  devise_scope :user do
+    get 'users', :to => 'users#show', :as => :user_root # Rails 3
+  end
 
   resources :menu_items
   resources :users, only: [:show]
